@@ -4,7 +4,7 @@ void base_draw(void)
   int i, j;
 
   /*
-  draw pixel
+    draw pixel
   */
   epd_clear();
   for (j = 0; j < 600; j += 50)
@@ -21,7 +21,7 @@ void base_draw(void)
   delay(3000);
 
   /*
-  draw line
+    draw line
   */
   epd_clear();
   for (i = 0; i < 800; i += 100)
@@ -33,7 +33,7 @@ void base_draw(void)
   delay(3000);
 
   /*
-  fill rect
+    fill rect
   */
   epd_clear();
   epd_set_color(BLACK, WHITE);
@@ -49,7 +49,7 @@ void base_draw(void)
   delay(3000);
 
   /*
-  draw circle
+    draw circle
   */
   epd_set_color(BLACK, WHITE);
   epd_clear();
@@ -61,7 +61,7 @@ void base_draw(void)
   delay(3000);
 
   /*
-  fill circle
+    fill circle
   */
   epd_clear();
   for (j = 0; j < 6; j++)
@@ -75,7 +75,7 @@ void base_draw(void)
   delay(3000);
 
   /*
-  draw triangle
+    draw triangle
   */
   epd_clear();
   for (i = 1; i < 5; i++)
@@ -103,7 +103,7 @@ void draw_text_demo(void)
   buff[3] = '4';
   buff[4] = '8';
   epd_disp_string(buff, 0, 100);
-  
+
   epd_disp_string("ASCII48: Hello,4645451 World!", 0, 350);
 
   epd_set_ch_font(GBK64);

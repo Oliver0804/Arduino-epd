@@ -1,22 +1,19 @@
+
 void call_rtc() {
-  tmElements_t tm;
   if (RTC.read(tm)) {
+
     Serial.print("Time = ");
     print2digits(tm.Hour);
     Serial.write(':');
     print2digits(tm.Minute);
     Serial.write(':');
     print2digits(tm.Second);
-    Serial.print(", Date (D/M/Y) = ");
-    Serial.print(tm.Day);
-    Serial.write('/');
-    Serial.print(tm.Month);
-    Serial.write('/');
-    Serial.print(tmYearToCalendar(tm.Year));
-    Serial.println();
-    sprintf(buff, "%02d     :     %02d",tm.Hour,tm.Minute);
-    //Serial.println(buff);
-    epd_disp_string(buff, 500, 0);
+    Serial.println("");
+
+    epd_disp_bitmap("PIC9.BMP", 350, 65);
+    sprintf(buff, "%02d     :     %02d", tm.Hour, tm.Minute);
+    epd_disp_string(buff, 450, 70);
+    
   } else {
     if (RTC.chipPresent()) {
       Serial.println("The DS1307 is stopped.  Please run the SetTime");
